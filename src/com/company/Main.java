@@ -3,15 +3,22 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-    Animal dog = new Animal();
-    dog.species= "dog";
-    dog.name = "Haiku";
-    dog.weight = 8.5;
+        Animal dog = new Animal("dog", 20.0, "Szarik");
+        dog.feed();
 
-    Phone iPhone = new Phone();
-    iPhone.screenSize = 4.5;
-    iPhone.producer = "Apple";
-    iPhone.model = "65";
-    iPhone.operationSystem = "ios";
+        dog.feed();
+        dog.feed();
+        dog.feed();
+        dog.feed();
+
+
+
+        Human me = new Human();
+        me.firstName = "Adrian";
+        me.lastName = "Mehring";
+        me.pet = dog;
+
+        System.out.println("Zwierzak nazwa się: " + me.pet.name);
+
     }
 }
