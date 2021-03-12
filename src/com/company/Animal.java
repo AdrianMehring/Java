@@ -5,7 +5,6 @@ import java.io.File;
 public class Animal {
     final public String species;
     public String name;
-    public File pic;
     private Double weight;
 
     public Animal(String species, Double weight, String name) {
@@ -15,7 +14,27 @@ public class Animal {
     }
 
     void feed() {
-        weight += 1;
-        System.out.println("Thx for food, bro");
+        if(weight<=0){
+            System.out.println("U cant feed death pet");
+
+
+        }
+        else{
+            weight += 1;
+            System.out.println("Thx for food, bro");
+        }
+    }
+    void takeForAWalk(){
+
+        if(weight>=1){
+            weight-=1;
+            System.out.println("Thx for a walk");
+
+
+        }
+        else{
+            System.out.println("Cant go for a walk with death pet");
+        }
+
     }
 }
