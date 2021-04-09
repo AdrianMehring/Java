@@ -4,6 +4,15 @@ import java.io.File;
 
 public class Animal {
     final public String species;
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
     private Double weight;
 
     static final public double DEFAULT_ANIMAL_WEIGHT = 1.0;
