@@ -6,12 +6,15 @@ public class Main {
     public static void main(String[] args) {
         Date date = new Date();
         Human me = new Human();
+        Animal burek = new Animal("cow");
+        Phone Apple = new Phone ("Apple","I5",1200.00,"IOS");
         me.firstName = "Adrian";
         Car Audi = new Car("A3","Audi",2021,4344.54);
         //me.car = new Car("A4","Audi",1992);
         //System.out.println(me.car);
         Car Golf = new Car("5","Volkswagen",2012,54444.54);
         Car Fiat = new Car("Punto","Fiat",1993,344.54);
+
         System.out.println();
         //zad2
         //System.out.println("Name:" +me.firstName+",salary "+me.getSalary()+"Zł");
@@ -20,7 +23,6 @@ public class Main {
         //me.setSalary(5435.65);
 
         //zad 5?
-
         me.getCar();
         System.out.println();
         me.setCar(Audi);
@@ -28,5 +30,17 @@ public class Main {
         me.setCar(Golf);
         System.out.println();
         me.setCar(Fiat);
+        System.out.println();
+
+    //Zadanie 6
+        System.out.println(burek);
+        System.out.println(Apple);
+        System.out.println(Golf);
+
+
+
+
+
+
     }
 }

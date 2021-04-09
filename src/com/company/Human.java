@@ -15,38 +15,40 @@ public class Human {
 
     protected String phone;
     private Car car;
-    public void getCar() {
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "salary=" + salary +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", pet=" + pet +
+                ", phone='" + phone + '\'' +
+                ", car=" + car +
+                '}';
     }
 
+    public void getCar() {
+    }
         public void setCar(Car car) {
             if (salary > car.value)
             {
                 System.out.println("udało się kupić za gotówkę\n "+car.producer+" "+car.model+" "+"Rocznik "+car.year);
-
+                this.car = car;
             }
             else if (salary> car.value/12){
                 System.out.println("udało się kupić na kredyt\n "+car.producer+""+car.model+" "+"Rocznik "+car.year);
-
+                this.car = car;
             }
             else {
                 System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
             }
-
-
-
         }
-
-
-
-
-
-
     public double getSalary() {
         System.out.println("Data pobrania "+java.time.LocalDateTime.now());
         System.out.println(this.salary);
         return this.salary;
     }
-
     public void setSalary(Double salary) {
         if (salary > 0) {
             System.out.println("nowe dane zostały wysłane do systemu księgowego");
