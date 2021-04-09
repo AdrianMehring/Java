@@ -1,4 +1,7 @@
 package com.company;
+import devices.Car;
+import devices.Phone;
+
 import java.util.Date;
 
 public class Main {

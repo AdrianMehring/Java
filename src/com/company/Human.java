@@ -1,5 +1,7 @@
 package com.company;
 
+import devices.Car;
+
 public class Human {
     public String getFirstName() {
         return firstName;
