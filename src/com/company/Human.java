@@ -1,5 +1,5 @@
 package com.company;
-import java.time.LocalDateTime;
+
 public class Human {
     public String getFirstName() {
         return firstName;
@@ -8,12 +8,38 @@ public class Human {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    private Double salary = 6555.43;
+    private Double salary = 555.43;
     public String firstName;
     public String lastName;
     public Animal pet;
-    public Car car;
+
     protected String phone;
+    private Car car;
+    public void getCar() {
+    }
+
+        public void setCar(Car car) {
+            if (salary > car.value)
+            {
+                System.out.println("udało się kupić za gotówkę\n "+car.producer+" "+car.model+" "+"Rocznik "+car.year);
+
+            }
+            else if (salary> car.value/12){
+                System.out.println("udało się kupić na kredyt\n "+car.producer+""+car.model+" "+"Rocznik "+car.year);
+
+            }
+            else {
+                System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+            }
+
+
+
+        }
+
+
+
+
+
 
     public double getSalary() {
         System.out.println("Data pobrania "+java.time.LocalDateTime.now());
