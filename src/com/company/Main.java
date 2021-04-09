@@ -11,9 +11,11 @@ public class Main {
         me.car = new Car("A4","Audi",1992);
         //System.out.println(me.car);
         System.out.println();
-        me.setSalary(313.00);
-
+        //zad2
         System.out.println("Name:" +me.firstName+",salary "+me.getSalary()+"Zł");
+        //zad3,4
+        me.setSalary(-343.54);
+        me.setSalary(5435.65);
 
 
 

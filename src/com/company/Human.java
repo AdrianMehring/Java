@@ -8,7 +8,7 @@ public class Human {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    private Double salary;
+    private Double salary = 6555.43;
     public String firstName;
     public String lastName;
     public Animal pet;
@@ -17,7 +17,7 @@ public class Human {
 
     public double getSalary() {
         System.out.println("Data pobrania "+java.time.LocalDateTime.now());
-
+        System.out.println(this.salary);
         return this.salary;
     }
 
@@ -27,7 +27,10 @@ public class Human {
             System.out.println("odebranie aneksu do umowy od pani Hani z kadr");
             System.out.println("ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu");
             this.salary = salary;
-
+            System.out.println(salary+"zł");
+        }
+        else {
+            System.out.println("Wynagrodzenie nie moze być na "+salary);
         }
     }
 }
