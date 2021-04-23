@@ -1,6 +1,9 @@
 package devices;
 
-public class Phone extends Device {
+import com.company.Human;
+import com.company.Salleable;
+
+public class Phone extends Device implements Salleable {
     final public Double screenSize;
     final public String operationSystem;
 
@@ -13,5 +16,20 @@ public class Phone extends Device {
     @Override
     public void turnOn() {
         System.out.println("Podaj odcisk palca");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if (seller.phone != this) {
+            System.out.println("Błąd");
+        } else if (buyer.cash < price) {
+            System.out.println("Błąd");
+        } else {
+            seller.cash += price;
+            buyer.cash -= price;
+            buyer.phone = seller.phone;
+            seller.phone = null;
+            System.out.println("Transakcja udana sprzedano"+ this + "za "+price);
+        }
     }
 }

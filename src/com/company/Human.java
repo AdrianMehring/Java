@@ -1,5 +1,5 @@
 package com.company;
-
+import devices.Phone;
 import devices.Car;
 public class Human extends Animal implements Washable, Comparable<Human> {
     public String getFirstName() {
@@ -13,8 +13,8 @@ public class Human extends Animal implements Washable, Comparable<Human> {
     public String firstName;
     public String lastName;
     public Animal pet;
-    protected String phone;
-    private Car car;
+    public Phone phone;
+    public Car car;
 
     public Double cash;
 
