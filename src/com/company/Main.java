@@ -1,5 +1,6 @@
 package com.company;
 import devices.Car;
+import devices.Device;
 import devices.Phone;
 
 import java.util.Date;
@@ -44,12 +45,13 @@ public class Main {
 
 
 
-        //Zadanie 7
+        //Zadanie 7,8
         //System.out.println(me instanceof Human);
         //System.out.println(me instanceof Animal);
 
         System.out.println(Apple.model);
         System.out.println(Apple.producer);
         Apple.turnOn();
+        Audi.turnOn();
     }
 }

@@ -1,6 +1,6 @@
 package devices;
 
-public class Device {
+public abstract class Device {
     final public String producer;
     final public String model;
     public int yearofproduction;
@@ -19,8 +19,8 @@ public class Device {
         this.model = model;
         this.yearofproduction = year;
     }
-    public void turnOn(){
-        System.out.println("Włączone");
+    abstract public  void turnOn();
 
-    }
+
+
 }
