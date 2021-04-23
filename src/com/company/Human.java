@@ -1,8 +1,7 @@
 package com.company;
 
 import devices.Car;
-
-public class Human {
+public class Human extends Animal {
     public String getFirstName() {
         return firstName;
     }
@@ -14,10 +13,12 @@ public class Human {
     public String firstName;
     public String lastName;
     public Animal pet;
-
     protected String phone;
     private Car car;
-
+    static final public String SPECIES = "Homo sapiens";
+    public Human(){
+        super(SPECIES);
+    }
     @Override
     public String toString() {
         return "Human{" +
@@ -35,11 +36,11 @@ public class Human {
         public void setCar(Car car) {
             if (salary > car.value)
             {
-                System.out.println("udało się kupić za gotówkę\n "+car.producer+" "+car.model+" "+"Rocznik "+car.year);
+                System.out.println("udało się kupić za gotówkę\n "+car.producer+" "+car.model+" "+"Rocznik "+car.yearofproduction);
                 this.car = car;
             }
             else if (salary> car.value/12){
-                System.out.println("udało się kupić na kredyt\n "+car.producer+""+car.model+" "+"Rocznik "+car.year);
+                System.out.println("udało się kupić na kredyt\n "+car.producer+""+car.model+" "+"Rocznik "+car.yearofproduction);
                 this.car = car;
             }
             else {

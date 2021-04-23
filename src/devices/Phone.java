@@ -1,25 +1,15 @@
 package devices;
 
-public class Phone {
-    final public String producer;
-    final public String model;
+public class Phone extends Device {
     final public Double screenSize;
     final public String operationSystem;
 
-    @Override
-    public String toString() {
-        return "Phone{" +
-                "producer='" + producer + '\'' +
-                ", model='" + model + '\'' +
-                ", screenSize=" + screenSize +
-                ", operationSystem='" + operationSystem + '\'' +
-                '}';
-    }
-
-    public Phone(String producer, String model, Double screenSize, String operationSystem) {
-        this.producer = producer;
-        this.model = model;
+    public Phone(String model, String producer, Integer yearofproduction, Double screenSize, String operationSystem) {
+        super(model, producer, yearofproduction);
         this.screenSize = screenSize;
         this.operationSystem = operationSystem;
     }
+
+
+
 }

@@ -10,7 +10,7 @@ public class Main {
         Date date = new Date();
         Human me = new Human();
         Animal burek = new Animal("cow");
-        Phone Apple = new Phone ("Apple","I5",1200.00,"IOS");
+        Phone Apple = new Phone ("Apple","I5",2021,5.0,"IOS");
         me.firstName = "Adrian";
         Car Audi = new Car("A3","Audi",2021,4344.54);
         //me.car = new Car("A4","Audi",1992);
@@ -44,6 +44,11 @@ public class Main {
 
 
 
-
+        //Zadanie 7
+        System.out.println(me instanceof Human);
+        System.out.println(me instanceof Animal);
+        System.out.println(Apple);
+        System.out.println(Audi);
+        Apple.turnOn();
     }
 }
