@@ -26,29 +26,30 @@ public class Main {
         //me.setSalary(5435.65);
 
         //zad 5?
-        me.getCar();
-        System.out.println();
-        me.setCar(Audi);
-        System.out.println();
-        me.setCar(Golf);
-        System.out.println();
-        me.setCar(Fiat);
-        System.out.println();
+        //me.getCar();
+        //System.out.println();
+        //me.setCar(Audi);
+        //System.out.println();
+        //me.setCar(Golf);
+        //System.out.println();
+        //me.setCar(Fiat);
+        //System.out.println();
 
     //Zadanie 6
-        System.out.println(burek);
-        System.out.println(Apple);
-        System.out.println(Golf);
+        //System.out.println(burek);
+       // System.out.println(Apple);
+       // System.out.println(Golf);
 
 
 
 
 
         //Zadanie 7
-        System.out.println(me instanceof Human);
-        System.out.println(me instanceof Animal);
-        System.out.println(Apple);
-        System.out.println(Audi);
+        //System.out.println(me instanceof Human);
+        //System.out.println(me instanceof Animal);
+
+        System.out.println(Apple.model);
+        System.out.println(Apple.producer);
         Apple.turnOn();
     }
 }
