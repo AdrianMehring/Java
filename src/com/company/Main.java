@@ -3,6 +3,7 @@ import devices.Car;
 import devices.Device;
 import devices.Phone;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Main {
@@ -53,5 +54,14 @@ public class Main {
         System.out.println(Apple.producer);
         Apple.turnOn();
         Audi.turnOn();
+
+
+        Human Adrian = new Human();
+        Adrian.cash = 0.0;
+        Adrian.pet= new Animal("dog");
+        Human Brother = new Human();
+        Brother.cash = 1000.0;
+        Adrian.pet.sell(Adrian,Brother,300.0);
+
     }
 }

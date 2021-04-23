@@ -1,7 +1,7 @@
 package com.company;
 
 import devices.Car;
-public class Human extends Animal {
+public class Human extends Animal implements Washable, Comparable<Human> {
     public String getFirstName() {
         return firstName;
     }
@@ -15,7 +15,11 @@ public class Human extends Animal {
     public Animal pet;
     protected String phone;
     private Car car;
+
+    public Double cash;
+
     static final public String SPECIES = "Homo sapiens";
+
     public Human(){
         super(SPECIES);
     }
@@ -29,6 +33,21 @@ public class Human extends Animal {
                 ", phone='" + phone + '\'' +
                 ", car=" + car +
                 '}';
+    }
+
+    @Override
+    public void wash() {
+        System.out.println("Myju mmujy");
+    }
+
+    @Override
+    public void dry() {
+        System.out.println("Szzzzzz");
+    }
+
+    @Override
+    public int compareTo(Human otherHuman) {
+        return 0;//(Double) (this.weight-otherHuman.weight);
     }
 
     public void getCar() {
