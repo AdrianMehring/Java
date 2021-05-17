@@ -3,8 +3,8 @@ package devices;
 import com.company.Human;
 import com.company.Salleable;
 
-public class Car extends Device implements Salleable {
-    public Double value = 32544.00;
+public abstract class Car extends Device implements Salleable {
+    public Double value;
 
 
 
@@ -33,4 +33,6 @@ public class Car extends Device implements Salleable {
             System.out.println("Transakcja udana sprzedano"+ this + "za "+price);
         }
     }
+
+    public abstract void refuel();
 }

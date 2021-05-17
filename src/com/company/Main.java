@@ -2,7 +2,9 @@ package com.company;
 import com.company.Animal.Animal;
 import devices.Car;
 import devices.Phone;
-
+import devices.Diesel;
+import devices.Electric;
+import devices.LPG;
 //import java.util.Date;
 
 public class Main {
@@ -18,11 +20,26 @@ public class Main {
         };
         Phone Apple = new Phone ("Apple","I5",2021,5.0,"IOS");
         me.firstName = "Adrian";
-        Car Audi = new Car("A3","Audi",2021,4344.54);
+        Car Audi = new LPG("A3", "Audi", 2021, 4344.54) {
+            @Override
+            public void refuel() {
+
+            }
+        };
         //me.car = new Car("A4","Audi",1992);
         //System.out.println(me.car);
-        Car Golf = new Car("5","Volkswagen",2012,54444.54);
-        Car Fiat = new Car("Punto","Fiat",1993,344.54);
+        Car Golf = new Diesel("5", "Volkswagen", 2012, 54444.54) {
+            @Override
+            public void refuel() {
+
+            }
+        };
+        Car Fiat = new Electric("Punto", "Fiat", 1993, 344.54) {
+            @Override
+            public void refuel() {
+
+            }
+        };
 
         System.out.println();
         //zad2

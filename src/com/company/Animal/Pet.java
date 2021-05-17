@@ -11,8 +11,8 @@ public class Pet extends Animal {
     public void feed(double foodWeight) {
         if (weight > 0) {
             weight += foodWeight;
-            System.out.print("Thx for food, bro. My weight is now " + this.weight + "\n");
+            System.out.print("My weight now " + this.weight + "\n");
         } else
-            System.out.print("Your pet died. You monster!\n");
+            System.out.print("You killed your pet\n");
     }
 }
