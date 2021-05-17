@@ -1,6 +1,8 @@
 package com.company;
+import com.company.Animal.Animal;
 import devices.Phone;
 import devices.Car;
+
 public class Human extends Animal implements Washable, Comparable<Human> {
     public String getFirstName() {
         return firstName;
@@ -82,6 +84,11 @@ public class Human extends Animal implements Washable, Comparable<Human> {
         else {
             System.out.println("Wynagrodzenie nie moze być na "+salary);
         }
+    }
+
+    @Override
+    public void feed(double foodWeight) {
+
     }
 }
 

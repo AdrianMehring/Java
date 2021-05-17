@@ -1,9 +1,10 @@
-package com.company;
+package com.company.Animal;
+import com.company.Human;
+import com.company.Salleable;
 
-import java.io.File;
-
-public class Animal implements Salleable {
+public abstract class Animal implements Salleable,Feedable {
     final public String species;
+    public String name;
 
     public Double getWeight() {
         return weight;
@@ -12,13 +13,13 @@ public class Animal implements Salleable {
     public void setWeight(Double weight) {
         this.weight = weight;
     }
-
-    private Double weight;
+    public Double weight;
 
     @Override
     public String toString() {
         return "Animal{" +
                 "species='" + species + '\'' +
+                ", name='" + name + '\'' +
                 ", weight=" + weight +
                 '}';
     }
@@ -32,25 +33,16 @@ public class Animal implements Salleable {
         this.species = species;
 
 
-        switch (species){
-            case "dog":
-                weight = DEFAULT_DOG_WEIGHT;
-                break;
-            case "cat":
-                weight = DEFAULT_CAT_WEIGHT;
-                break;
-            case "cow":
-                weight = DEFAULT_COW_WEIGHT;
-                break;
-            default:
-                weight = DEFAULT_ANIMAL_WEIGHT;
-                break;
-
+        switch (species) {
+            case "dog" -> weight = DEFAULT_DOG_WEIGHT;
+            case "cat" -> weight = DEFAULT_CAT_WEIGHT;
+            case "cow" -> weight = DEFAULT_COW_WEIGHT;
+            default -> weight = DEFAULT_ANIMAL_WEIGHT;
         }
 
     }
 
-    void feed() {
+    public void feed() {
         if(weight<=0){
             System.out.println("U cant feed death pet"+weight);
 
@@ -93,4 +85,5 @@ public class Animal implements Salleable {
             System.out.println("Transakcja udana sprzedano"+ this + "za "+price);
         }
     }
+
 }

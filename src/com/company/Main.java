@@ -1,17 +1,21 @@
 package com.company;
+import com.company.Animal.Animal;
 import devices.Car;
-import devices.Device;
 import devices.Phone;
 
-import java.util.Arrays;
-import java.util.Date;
+//import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) {
-        Date date = new Date();
+        //Date date = new Date();
         Human me = new Human();
-        Animal burek = new Animal("cow");
+        Animal burek = new Animal("cow") {
+            @Override
+            public void feed(double foodWeight) {
+
+            }
+        };
         Phone Apple = new Phone ("Apple","I5",2021,5.0,"IOS");
         me.firstName = "Adrian";
         Car Audi = new Car("A3","Audi",2021,4344.54);
@@ -48,7 +52,7 @@ public class Main {
 
         //Zadanie 7,8
         //System.out.println(me instanceof Human);
-        //System.out.println(me instanceof Animal);
+        //System.out.println(me instanceof com.company.Animal);
 
         System.out.println(Apple.model);
         System.out.println(Apple.producer);
@@ -58,10 +62,17 @@ public class Main {
 
         Human Adrian = new Human();
         Adrian.cash = 0.0;
-        Adrian.pet= new Animal("dog");
+        Adrian.pet= new Animal("dog") {
+            @Override
+            public void feed(double foodWeight) {
+
+            }
+        };
+
         Human Brother = new Human();
         Brother.cash = 1000.0;
         Adrian.pet.sell(Adrian,Brother,300.0);
+
 
 
 
