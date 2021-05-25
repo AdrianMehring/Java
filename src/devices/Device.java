@@ -4,6 +4,7 @@ public abstract class Device {
     final public String producer;
     final public String model;
     public int yearofproduction;
+    public Double value;
 
     @Override
     public String toString() {
@@ -19,6 +20,7 @@ public abstract class Device {
         this.model = model;
         this.yearofproduction = year;
     }
+
     abstract public  void turnOn();
 
 

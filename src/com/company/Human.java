@@ -2,6 +2,9 @@ package com.company;
 import com.company.Animal.Animal;
 import devices.Phone;
 import devices.Car;
+import devices.ProductionYearCarComparator;
+
+import java.util.Arrays;
 
 public class Human extends Animal implements Washable, Comparable<Human> {
     public String getFirstName() {
@@ -12,18 +15,19 @@ public class Human extends Animal implements Washable, Comparable<Human> {
         this.firstName = firstName;
     }
     private Double salary = 555.43;
+    private static final int DEFAULT_GARAGE_SIZE = 3;
     public String firstName;
     public String lastName;
     public Animal pet;
     public Phone phone;
-    public Car car;
-
+    public Car[] garage;
     public Double cash;
-
     static final public String SPECIES = "Homo sapiens";
 
-    public Human(){
+    public Human() {
         super(SPECIES);
+        this.garage = new Car[DEFAULT_GARAGE_SIZE];
+
     }
     @Override
     public String toString() {
@@ -33,7 +37,7 @@ public class Human extends Animal implements Washable, Comparable<Human> {
                 ", lastName='" + lastName + '\'' +
                 ", pet=" + pet +
                 ", phone='" + phone + '\'' +
-                ", car=" + car +
+                ", car=" + garage +
                 '}';
     }
 
@@ -52,22 +56,26 @@ public class Human extends Animal implements Washable, Comparable<Human> {
         return 0;//(Double) (this.weight-otherHuman.weight);
     }
 
-    public void getCar() {
+    public Car getCar(Integer parkingPlaceNumber ) {
+        return this.garage[parkingPlaceNumber];
     }
-        public void setCar(Car car) {
-            if (salary > car.value)
-            {
-                System.out.println("udało się kupić za gotówkę\n "+car.producer+" "+car.model+" "+"Rocznik "+car.yearofproduction);
-                this.car = car;
-            }
-            else if (salary> car.value/12){
-                System.out.println("udało się kupić na kredyt\n "+car.producer+""+car.model+" "+"Rocznik "+car.yearofproduction);
-                this.car = car;
-            }
-            else {
-                System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
+
+
+    public void setCar(Car car,Integer parkingPlaceNumber) {
+            this.garage[parkingPlaceNumber] = car;
+        }
+
+    public Double getGarageValue(){
+        Double value = 0.0;
+        for (Car car : garage) {
+            if (car.value != null) {
+                value += car.value;
             }
         }
+        return value;
+    }
+
+
     public double getSalary() {
         System.out.println("Data pobrania "+java.time.LocalDateTime.now());
         System.out.println(this.salary);
@@ -89,6 +97,40 @@ public class Human extends Animal implements Washable, Comparable<Human> {
     @Override
     public void feed(double foodWeight) {
 
+    }
+
+    public boolean hasCar(Car newCar) {
+        for(Car car:garage){
+            if(car == newCar)
+                return true;
+        }
+        return false;
+    }
+
+    public boolean hasFreeParkingLot() {
+        for(Car car: garage){
+            if(car==null)
+                return true;
+        }
+        return false;
+    }
+
+    public void removeCar(Car carToRemove) {
+        for(int i =0;i<garage.length;i++){
+            if(garage[i]==carToRemove)
+                garage[i] =null;
+        }
+    }
+
+    public void addCar(Car newCar) {
+        for(int i = 0; i <garage.length;i++){
+            if(garage[i]==null)
+                garage[i]= newCar;
+            return;
+        }
+    }
+    public void sortCars(){
+        Arrays.sort(garage, new ProductionYearCarComparator());
     }
 }
 

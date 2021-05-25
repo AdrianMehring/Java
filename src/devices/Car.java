@@ -20,18 +20,18 @@ public abstract class Car extends Device implements Salleable {
     }
 
     @Override
-    public void sell(Human seller, Human buyer, Double price) {
-        if (seller.car != this) {
-            System.out.println("Błąd");
-        } else if (buyer.cash < price) {
-            System.out.println("Błąd");
-        } else {
-            seller.cash += price;
-            buyer.cash -= price;
-            buyer.car = seller.car;
-            seller.car = null;
-            System.out.println("Transakcja udana sprzedano"+ this + "za "+price);
-        }
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if(!seller.hasCar(this))
+            throw new Exception("Sprzedawca nie ma auta");
+        if(!buyer.hasFreeParkingLot())
+            throw new Exception("Kupujacy nie ma miejsca");
+        if(buyer.cash< price)
+            throw new Exception("Kupujacy nie ma kasy");
+        seller.removeCar(this);
+        buyer.addCar(this);
+        seller.cash +=price;
+        buyer.cash += price;
+        System.out.println("sprzedano");
     }
 
     public abstract void refuel();

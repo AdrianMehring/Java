@@ -20,7 +20,7 @@ public class Main {
         };
         Phone Apple = new Phone ("Apple","I5",2021,5.0,"IOS");
         me.firstName = "Adrian";
-        Car Audi = new LPG("A3", "Audi", 2021, 4344.54) {
+        LPG Audi = new LPG("A3", "Audi", 2021, 4344.54) {
             @Override
             public void refuel() {
 
@@ -58,10 +58,10 @@ public class Main {
         //me.setCar(Fiat);
         //System.out.println();
 
-    //Zadanie 6
+        //Zadanie 6
         //System.out.println(burek);
-       // System.out.println(Apple);
-       // System.out.println(Golf);
+        // System.out.println(Apple);
+        // System.out.println(Golf);
 
 
 
@@ -70,25 +70,37 @@ public class Main {
         //Zadanie 7,8
         //System.out.println(me instanceof Human);
         //System.out.println(me instanceof com.company.Animal);
-
-        System.out.println(Apple.model);
-        System.out.println(Apple.producer);
+        //System.out.println(Apple.model);
+        //System.out.println(Apple.producer);
         Apple.turnOn();
         Audi.turnOn();
 
 
-        Human Adrian = new Human();
-        Adrian.cash = 0.0;
-        Adrian.pet= new Animal("dog") {
-            @Override
-            public void feed(double foodWeight) {
+        //Human Adrian = new Human();
+        //Adrian.cash = 0.0;
+       // Adrian.pet= new Animal("dog") {
+           // @Override
+            //public void feed(double foodWeight) {
 
-            }
-        };
+            //}
+       // };
 
-        Human Brother = new Human();
-        Brother.cash = 1000.0;
-        Adrian.pet.sell(Adrian,Brother,300.0);
+        //Human Brother = new Human();
+        //Brother.cash = 1000.0;
+        //Adrian.pet.sell(Adrian,Brother,300.0);
+
+        me.getSalary();
+        me.setSalary(3000.0);
+        me.getSalary();
+
+        System.out.println(me.getCar(1));
+        me.setCar(Audi,1);
+        System.out.println(me.getCar(1));
+
+        me.garage[1] = Audi;
+        me.garage[0] = Golf;
+
+        System.out.println(("Garaż"));
 
 
 
