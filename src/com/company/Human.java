@@ -66,7 +66,7 @@ public class Human extends Animal implements Washable, Comparable<Human> {
         }
 
     public Double getGarageValue(){
-        Double value = 0.0;
+        Double value = 1000.0;
         for (Car car : garage) {
             if (car.value != null) {
                 value += car.value;

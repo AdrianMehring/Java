@@ -9,7 +9,7 @@ import devices.LPG;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //Date date = new Date();
         Human me = new Human();
         Animal burek = new Animal("cow") {
@@ -85,8 +85,10 @@ public class Main {
             //}
        // };
 
-        //Human Brother = new Human();
-        //Brother.cash = 1000.0;
+        Human Brother = new Human();
+        Brother.getSalary();
+        Brother.setSalary(2333.0);
+        Brother.getSalary();
         //Adrian.pet.sell(Adrian,Brother,300.0);
 
         me.getSalary();
@@ -98,11 +100,11 @@ public class Main {
         System.out.println(me.getCar(1));
 
         me.garage[1] = Audi;
+        me.getCar(1);
         me.garage[0] = Golf;
+        //me.garage[0].sell(me,Brother,454.0);
 
-        System.out.println(("Garaż"));
-
-
+        //me.getGarageValue();
 
 
     }
