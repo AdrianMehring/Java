@@ -103,6 +103,17 @@ public class Main {
         me.getCar(1);
         me.garage[0] = Golf;
         //me.garage[0].sell(me,Brother,454.0);
+        me.addCar(Audi);
+        Audi.addOwner(me);
+        me.addCar(Audi);
+        me.addCar(Golf);
+        Golf.addOwner(me);
+        me.addCar(Golf);
+        System.out.println(Audi.Current());
+        System.out.println(Audi.wasTheOwner(me));
+        System.out.println(Audi.isBuyerSoldCar(me,Brother));
+        System.out.println(Audi.NumberofTransactions());
+        //System.out.println(wasTheOwner(me));
 
         //me.getGarageValue();
 
